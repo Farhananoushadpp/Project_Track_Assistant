@@ -1,0 +1,34 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addintrestingareas_post">
+  <table width="200" border="1" class="table table-striped">
+    <tr class=" table-dark ">
+      <td>details</td>
+      <td><label><select name="select">
+    <option value="cn">Computer Network</option>
+    <option value="ai">Artifitial Intelligence</option>
+    <option value="nlp">Natural Language Processing</option>
+    <option value="dl">Deep learning</option>
+    <option value="ml">Machine Learning</option>
+    <option value="">Database Management System</option>
+    <option value="">Internet of things</option>
+    <option value="">Cloud Computig</option>
+    <option value="bc">Blockchain</option>
+    <option value="">Project Management</option>
+    <option value="" selected>Cybersecurity</option>
+</select>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Submit" class="btn btn-outline-success" align="center"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

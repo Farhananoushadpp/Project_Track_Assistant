@@ -1,0 +1,121 @@
+{% extends 'HOD-Admin/admin_index.html' %}
+{% block body %}
+<form action="/editstudent_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1" class="table  table-striped">
+    <tr class=" table-dark ">
+      <td>regno</td>
+      <td><label>
+        <input type="text" name="textfield"  value="{{ vall.RegisterNo }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>course</td>
+      <td><label>
+          <select name="textfield2" >
+              {% for i in val %}
+                  <option value="{{ i.id }}" {% if val1.COURSE.id == val.id %}selected{% else %}{% endif %}>{{ i.course }}</option>
+              {% endfor %}
+          </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>semester</td>
+      <td><label>
+<select name="select" >
+    <option {% if vall.semester == 1 %} selected {% endif %}>1</option>
+    <option {% if vall.semester == 2 %} selected {% endif %}>2</option>
+    <option {% if vall.semester == 3 %} selected {% endif %}>3</option>
+    <option {% if vall.semester == 4 %} selected {% endif %}>4</option>
+    <option {% if vall.semester == 5 %} selected {% endif %}>5</option>
+    <option {% if vall.semester == 6 %} selected {% endif %}>6</option>
+    <option {% if vall.semester == 7 %} selected {% endif %}>7</option>
+    <option {% if vall.semester == 8 %} selected {% endif %}>8</option>
+    <option {% if vall.semester == 9 %} selected {% endif %}>9</option>
+    <option {% if vall.semester == 10 %} selected {% endif %}>10</option>
+</select>      </label></td>
+    </tr>
+    <tr>
+      <td>fname </td>
+      <td><label>
+        <input type="text" name="textfield4" value="{{ vall.fname }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>lname</td>
+      <td><label>
+        <input type="text" name="textfield5" value="{{ vall.lname }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>dob</td>
+      <td><label>
+        <input type="date" name="textfield6" value="{{dob}}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td><label>
+        <input type="radio" name="radiobutton" value="male" {% if vall.gender == 'male' %} checked{% endif %}/>Male
+        <input type="radio" name="radiobutton" value="female" {% if vall.gender == 'female' %} checked{% endif %}/>Female
+      </label></td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td><label>
+        <input type="text" name="textfield8" value="{{ vall.place }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>post</td>
+      <td><label>
+        <input type="text" name="textfield9" value="{{ vall.post }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td><label>
+        <input type="text" name="textfield10"value="{{ vall.pin }}"   required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>phoneno</td>
+      <td><label>
+        <input type="text" name="textfield11" value="{{ vall.Phoneno }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><label>
+        <input type="text" name="textfield12" value="{{ vall.email }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>year</td>
+      <td><label>
+        <input type="text" name="textfield13" value="{{ vall.year }}"  required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td><label>
+        <input type="file" name="file" value=""/><img src="{{ vall.image.url }}" alt="" height="100px" width="100px"/>
+      </label></td>
+    </tr>
+
+{#   <tr>#}
+{#      <td>Password</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield15" value="{{ vall.password }}"/>#}
+{#      </label></td>#}
+{#    </tr>#}
+    <tr>
+        <td></td>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Submit" class="btn btn-outline-success" align="center"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

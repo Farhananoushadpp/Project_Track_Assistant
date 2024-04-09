@@ -1,0 +1,40 @@
+{% extends 'HOD-Admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewprojecttopicssrch">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <td colspan="7" style="font-style: italic"><label>Topic
+          <input type="text" name="textfield" />
+          <input name="search" type="submit" id="search" value="search" />
+      </label></td>
+    </tr>
+    <tr class="table-dark">
+      <td>student</td>
+      <td>heading</td>
+      <td>file</td>
+      <td>date</td>
+      <td>staff</td>
+      <td>&nbsp;status</td>
+    </tr>
+                  {% for i in val %}
+
+    <tr>
+      <td style="font-style: italic">{{ i.STUDENT.fname}} {{ i.STUDENT.lname }}&nbsp;</td>
+      <td style="font-style: italic">{{ i.heading }}&nbsp;</td>
+      <td style="font-style: italic">&nbsp;{{ i.file }}&nbsp;</td>
+      <td style="font-style: italic">&nbsp;{{ i.date }}&nbsp;</td>
+{#      <td>{{ i.status }}&nbsp;</td>#}
+      <td style="font-style: italic">&nbsp;{{ i.staff.fname }}{{ i.staff.lname }}</td>
+        {% if i.status == 'pending' %}
+      <td style="font-style: italic"><p><a href="accept/{{ i.id }}" class="btn btn-outline-success">accept</a></p>
+      <p><a href="reject/{{ i.id }}" class="btn btn-outline-danger">reject</a></p></td>
+    {% else %}
+            <td>    {{ i.status }}
+</td>
+    {% endif %}
+    </tr>
+                  {% endfor %}
+
+  </table>
+</form>
+{% endblock %}

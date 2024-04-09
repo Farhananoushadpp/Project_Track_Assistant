@@ -1,0 +1,30 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="viewintrestingareasrch">
+  <table width="259" border="1" class="table table-striped">
+    <tr>
+      <td colspan="3"><label>area
+        <input type="text" name="textfield" />
+          <input name="Search" type="submit" id="Search" value="Search" />
+      </label></td>
+    </tr>
+    <tr class=" table-dark ">
+      <td width="67">details</td>
+      <td width="124">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.details }}&nbsp;</td>
+      <td><a href="deleteviewintrestingareas/{{ i.id }}" class="btn btn-outline-danger">delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="3"><div align="center"><a href="addintrestingareas" class="btn btn-outline-success">Add new</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

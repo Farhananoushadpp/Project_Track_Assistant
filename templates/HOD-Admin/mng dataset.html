@@ -1,0 +1,35 @@
+{% extends 'HOD-Admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+{#    <tr>#}
+{#      <td colspan="6"><label>Date#}
+{#          <input type="date" name="textfield" />#}
+{#          <input name="search" type="submit" id="search" value="search" />#}
+{#      </label></td>#}
+{#    </tr>#}
+  <tr>
+      <td colspan="6"><div align="center"><a href="adddataset" class="btn btn-outline-info">Add new</a></div></td>
+    </tr>
+    <tr class="table-dark">
+      <td>Area</td>
+      <td>Keyword</td>
+
+      <td>&nbsp;</td>
+    </tr>
+            {% for i in  val %}
+
+    <tr>
+
+      <td style="font-style: italic">&nbsp;{{ i.area }}</td>
+      <td style="font-style: italic">&nbsp;{{ i.keywords }}</td>
+
+      <td style="font-style: italic">
+      <p><a href="deletedataset/{{ i.id }}" class="btn btn-outline-danger">Delete</a></p></td>
+    </tr>
+            {% endfor %}
+
+
+  </table>
+</form>
+{% endblock %}

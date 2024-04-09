@@ -1,0 +1,32 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="291" border="1" class="table table-striped">
+    <tr>
+      <td colspan="6" ><label>date
+        <input type="date" name="textfield" />
+          <input name="Search" type="submit" id="Search" value="Search" />
+      </label></td>
+    </tr>
+    <tr class=" table-dark ">
+      <td width="40">course</td>
+      <td width="38">details</td>
+      <td width="26">year</td>
+      <td width="26">date</td>
+      <td width="136">last date </td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{i.COURSE.course }}&nbsp;</td>
+      <td>{{ i.details }}&nbsp;</td>
+      <td>{{ i.year }}&nbsp;</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>{{ i.lastdate }}&nbsp;</td>
+      </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

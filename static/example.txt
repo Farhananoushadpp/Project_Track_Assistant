@@ -1,0 +1,991 @@
+big data 
+analyticsfourth quarter 2011
+by philip russom tdwi best practices report 
+tdwi.orgtdwi  research
+co-sponsored by               tdwi.org  1
+© 2011 by tdwi (the data warehousing institutetm), a division of 1105 media, inc. all rights reserved. reproductions in whole 
+or in part are prohibited except by written permission. e-mail requests or feedback to info@tdwi.org. product and company names 
+mentioned herein may be trademarks and/or registered trademarks of their respective companies.big data  ana lyticsfourth q uarter 2011
+tdwi bes t prac tices r epor t 
+by philip russom
+table of contents
+research methodology and demographics                                3
+executive summary                                                          4
+introduction to big data analytics                                          5
+defining advanced analytics as a discovery mission                     5
+defining big data via the three vs                                        6
+defining big data analytics                                               8
+why put big data and analytics together now?                          9
+the state of big data analytics                                             10
+big data analytics adoption                                             10
+benefits of big data analytics                                           10
+barriers to big data analytics                                           11
+big data: problem or opportunity?                                      12
+organizational issues                                                       13
+ownership and control of big data analytics                            13
+big data analytics can have a departmental focus                     14
+job titles for big data analytics                                         14
+best practices in big data analytics                                                        15
+volume growth of analytic big data                                     15
+managing analytic big data                                             16
+data types for big data                                                 17
+refresh rates for analytic data                                         19
+replacing analytics platforms                                           20
+tools, techniques, and trends for big data analytics                   22
+potential growth versus commitment for big data analytics options     24
+trends for big data analytics options                                   26
+vendor products for big data analytics                                   31
+recommendations                                                           34 2 tdwi  research
+big data  a n a lyt ic s
+about the a uthor
+philip russom is director of tdwi research for data management and oversees many of tdwi’s 
+research-oriented publications, services, and events. he is a well-known figure in data warehousing and business intelligence, having published over five hundred research reports, magazine articles, opinion columns, speeches, webinars, and more. before joining tdwi in 2005, russom was an industry analyst covering bi at forrester research and giga information group. he also ran his own business as an independent industry analyst and bi consultant and was a contributing editor with leading it magazines. before that, russom worked in technical and marketing positions for various database vendors. you can reach him at prussom@tdwi.org, @prussom on twitter, and on linkedin at linkedin.com/in/philiprussom.
+about tdwi
+tdwi, a division of 1105 media, inc., is the premier provider of in-depth, high-quality education and research in the business intelligence and data warehousing industry. tdwi is dedicated to educating business and information technology professionals about the best practices, strategies, techniques, and tools required to successfully design, build, maintain, and enhance business intelligence and data warehousing solutions. tdwi also fosters the advancement of business intelligence and data warehousing research and contributes to knowledge transfer and the professional development of its members. tdwi offers a worldwide membership program, five major educational conferences, topical educational seminars, role-based training, onsite courses, certiﬁcation, solution provider partnerships, an awards program for best practices, live webinars, resourceful publications, an in-depth research program, and a comprehensive web site: tdwi.org.
+about the tdwi best practices reports series
+this series is designed to educate technical and business professionals about new business intelligence technologies, concepts, or approaches that address a significant problem or issue. research for the reports is conducted via interviews with industry experts and leading-edge user companies and is supplemented by surveys of business intelligence professionals.
+to support the program, tdwi seeks vendors that collectively wish to evangelize a new approach 
+to solving business intelligence problems or an emerging technology discipline. by banding together, sponsors can validate a new market niche and educate organizations about alternative solutions to critical business intelligence issues. please contact tdwi research director philip russom (prussom@tdwi.org) to suggest a topic that meets these requirements.
+acknowledgments
+tdwi would like to thank many people who contributed to this report. first, we appreciate the many users who responded to our survey, especially those who responded to our requests for phone interviews. second, our report sponsors, who diligently reviewed outlines, survey questions, and report drafts. finally, we would like to recognize tdwi’s production team: jennifer agee, bill grimmer, and denelle hanlon.
+sponsors
+cloudera, emc greenplum, ibm, impetus technologies, kognitio, paraccel, sand technology, sap, sas, tableau software, and teradata sponsored the research for this report.               tdwi.org  3
+research methodology and demographics
+position
+corporate it professional 58%
+business sponsors/users 22%
+consultants 20%
+industry
+consulting/professional services 15%
+financial services 15%
+software/internet 10%
+healthcare 7%
+insurance 7%
+manufacturing (non-computers) 5%
+telecommunications 5%
+government: federal 4%
+media/entertainment/publishing 4%
+advertising/marketing/pr 3%
+computer manufacturing 3%
+education 3%
+utilities 3%
+other
+(“other” consists of multiple industries, each 
+represented by 2% or less of respondents.)16%
+geography
+united states 56%
+europe 17%
+asia 7%
+canada 6%
+australia 4%
+central or south america 3%
+middle east 3%
+africa 2%
+other 2%
+company size by revenue
+less than $100 million 26%
+$100–500 million 11%
+$500 million–$1 billion 12%
+$1–5 billion 18%
+$5–10 billion 7%
+more than $10 billion 18%
+don’t know 8%
+based on 325 survey respondents.research methodology and 
+demographics
+report scope. according to tdwi survey data, a new flood 
+of user organizations is currently commencing or expanding solutions for analytics with big data. to supply the demand, vendors have recently released numerous new products and functions, specifically for advanced forms of analytics (beyond olap and reporting) and analytic databases that can manage big data. while it’s good to have options, it’s hard to track them and determine in which situations they are ready for use. the purpose of this report is to accelerate users’ understanding of the many new tools and techniques that have emerged for analytics with big data in recent years. it will also help readers map newly available options to real-world use cases.
+survey methodology. in may 2011, tdwi sent an invitation via 
+e-mail to the data management professionals in its database, asking them to complete an internet-based survey. the invitation was also distributed via web sites, newsletters, and publications from tdwi and other firms. the survey drew responses from almost 360 survey respondents. from these, we excluded incomplete responses and respondents who identified themselves as academics or vendor employees. the resulting completed responses of 325 respondents form the core data sample for this report.
+survey demographics. the majority of survey respondents 
+are corporate it professionals (58%), whereas the others are business sponsors or users (22%) and consultants (20%).  
+we asked consultants to fill out the survey with a recent client 
+in mind.
+the consulting (15%) and financial services (15%) industries 
+dominate the respondent population, followed by software (10%), healthcare (7%), insurance (7%), and other industries. most survey respondents reside in the u.s. (56%) or europe (17%). respondents are fairly evenly distributed across all sizes of companies and other organizations.
+other research methods. in addition to the survey, tdwi 
+research conducted many telephone interviews with technical users, business sponsors, and recognized data management experts. tdwi also received product briefings from vendors that offer products and services related to the best practices under discussion. 4 tdwi  research
+big data  a n a lyt ic s
+executive summary
+oddly enough, big data was a serious problem just a few years ago. when data volumes started 
+skyrocketing in the early 2000s, storage and cpu technologies were overwhelmed by the numerous terabytes of big data—to the point that it faced a data scalability crisis. then we were once again snatched from the jaws of defeat by moore’s law. storage and cpus not only developed greater capacity, speed, and intelligence; they also fell in price. enterprises went from being unable to afford or manage big data to lavishing budgets on its collection and analysis.
+today, enterprises are exploring big data to discover facts they didn’t know before. this is an 
+important task right now because the recent economic recession forced deep changes into most businesses, especially those that depend on mass consumers. using advanced analytics, businesses can study big data to understand the current state of the business and track still-evolving aspects such as customer behavior.
+if you really want the lowdown on what’s happening in your business, you need large volumes of 
+highly detailed data. if you truly want to see something you’ve never seen before, it helps to tap into data that’s never been tapped for business intelligence (bi) or analytics. some of the untapped data will be foreign to you, coming from sensors, devices, third parties, web applications, and social media. some big data sources feed data unceasingly in real time. put all that together, and you see that big data is not just about giant data volumes; it’s also about an extraordinary diversity of data types, delivered at various speeds and frequencies.
+note that two technical entities have come together. first, there’s big data for massive amounts 
+of detailed information. second, there’s advanced analytics, which is actually a collection of different tool types, including those based on predictive analytics, data mining, statistics, artificial intelligence, natural language processing, and so on. put them together and you get big data analytics, the hottest new practice in bi today.
+of course, businesspeople can learn a lot about the business and their customers from bi programs 
+and data warehouses. but big data analytics explores granular details of business operations and customer interactions that seldom find their way into a data warehouse or standard report. some organizations are already managing big data in their enterprise data warehouses (edws), while others have designed their dws for the well-understood, auditable, and squeaky clean data that the average business report demands. the former tend to manage big data in the edw and execute most analytic processing there, whereas the latter tend to distribute their efforts onto secondary analytic platforms. there are also hybrid approaches.
+regardless of approach, user organizations are currently reevaluating their analytic portfolios. in 
+response to the demand for platforms suited to big data analytics, vendors have released a slew of new product types including analytic databases, data warehouse appliances, columnar databases, no-sql databases, distributed file systems, and so on. there is also a new slew of analytic tools.
+this report drills into all the aspects of big data analytics mentioned here to give users and their 
+business sponsors a solid background for big data analytics, including business and technology drivers, successful business use cases, and common technology enablers. the report also uses survey data to project the future of the most common tool types, features, and functions associated with big data analytics, so users can apply this information to planning their own programs and technology stacks for big data analytics.big data used to be a 
+technical problem. now it’s a 
+business opportunity.
+big data is not just big. it’s 
+also diverse data types and 
+streaming data.
+big data analytics is the 
+application of advanced 
+analytic techniques to very 
+big data sets.
+there are many types of 
+vendor products to consider  
+for big data analytics. 
+this report discusses  
+the types.               tdwi.org  5
+introduction
+1 see the tdwi best practices report next generation data warehouse platforms (q4 2009), available on tdwi.org.introduction to big data analytics
+big data analytics is where advanced analytic techniques operate on big data sets. hence, big data 
+analytics is really about two things—big data and analytics—plus how the two have teamed up to create one of the most profound trends in business intelligence (bi) today. let’s start by defining advanced analytics, then move on to big data and the combination of the two.
+defining a dvanced a nalytics as a discovery mission
+according to a 2009 tdwi survey, 38% of organizations surveyed reported practicing advanced analytics, whereas 85% said they would be practicing it within three years.
+1 why the rush to 
+advanced analytics? first, change is rampant in business, as seen in the multiple “economies” we’ve gone through in recent years. analytics helps us discover what has changed and how we should react. second, as we crawl out of the recession and into the recovery, there are more and more business opportunities that should be seized. to that end, advanced analytics is the best way to discover new customer segments, identify the best suppliers, associate products of affinity, understand sales seasonality, and so on. for these reasons, tdwi has seen a steady stream of user organizations implementing analytics in recent years.
+the rush to analytics means that many organizations are embracing advanced analytics for the first 
+time, and hence are confused about how to go about it. even if you have related experience in data warehousing, reporting, and online analytic processing (olap), you’ll find that the business and technical requirements are different for advanced forms of analytics. to help user organizations select the right form of analytics and prepare big data for analysis, this report will discuss new options for advanced analytics and analytic databases for big data so that users can make intelligent decisions as they embrace analytics.
+note that user organizations are implementing specific forms of analytics, particularly what is 
+sometimes called advanced analytics. this is a collection of related techniques and tool types, usually including predictive analytics, data mining, statistical analysis, and complex sql. we might also extend the list to cover data visualization, artificial intelligence, natural language processing, and database capabilities that support analytics (such as mapreduce, in-database analytics, in-memory databases, columnar data stores).
+instead of “advanced analytics,” a better term would be “discovery analytics,” because that’s what 
+users are trying to accomplish. (some people call it “exploratory analytics.”) in other words, with big data analytics, the user is typically a business analyst who is trying to discover new business facts that no one in the enterprise knew before. to do that, the analyst needs large volumes of data with plenty of detail. this is often data that the enterprise has not yet tapped for analytics.
+for example, in the middle of the recent economic recession, companies were constantly being hit by new forms of customer churn. to discover the root cause of the newest form of churn, a business analyst would grab several terabytes of detailed data drawn from operational applications to get a view of recent customer behaviors. the analyst might mix that data with historic data from a data warehouse. dozens of queries later, the analyst would discover a new churn behavior in a subset of the customer base. with any luck, that discovery would lead to a metric, report, analytic model, or some other product of bi, through which the company could track and predict the new form of churn.
+discovery analytics against big data can be enabled by different types of analytic tools, including those based on sql queries, data mining, statistical analysis, fact clustering, data visualization, in the last three years or 
+so, many organizations have deployed analytics for the first time.
+“discovery analytics” is a 
+more descriptive term than “advanced analytics.” 6 tdwi  research
+big data  a n a lyt ic s
+natural language processing, text analytics, artificial intelligence, and so on. it’s quite an arsenal of 
+tool types, and savvy users get to know their analytic requirements before deciding which tool type is appropriate to their needs.
+all these techniques have been around for years, many of them appearing in the 1990s. the 
+difference today is that far more user organizations are actually using them. that’s because most of these techniques adapt well to very large, multi-terabyte data sets with minimal data preparation. that brings us to big data.
+defining big data via the three vs
+most definitions of big data focus on the size of data in storage. size matters, but there are other important attributes of big data, namely data variety and data velocity . the three vs of big data  
+(volume, variety, and velocity) constitute a comprehensive definition, and they bust the myth that big data is only about data volume. in addition, each of the three vs has its own ramifications for analytics.
+2 (see figure 1.) 
+figure 1. the three vs of big data
+data volume as a defining attribute of big data.
+it’s obvious that data volume is the primary attribute of big data. with that in mind, most people define big data in terabytes—sometimes petabytes. for example, a number of users interviewed by tdwi are managing 3 to 10 terabytes (tb) of data for analytics. yet, big data can also be quantified by counting records, transactions, tables, or files. some organizations find it more useful to quantify big data in terms of time. for example, due to the seven-year statute of limitations in the u.s., many firms prefer to keep seven years of data available for risk, compliance, and legal analysis.
+the scope of big data affects its quantification, too. for example, in many organizations, the data collected for general data warehousing differs from data collected specifically for analytics. different forms of analytics may have different data sets. some analytic practices lead a business analyst or similar user to create ad hoc analytic data sets per analytic project. then, there’s the entire enterprise, which in toto has its own, even larger scope of big data. furthermore, each of these big data isn’t just about  
+data volume.
+the scope of big data  
+varies widely.
+volume
+velocity variety• terabytes
+• records
+• transactions
+• tables, /f_iles
+• structured
+• unstructured
+• semistructured
+• all the above• batch
+• near time
+• real time
+• streams
+3 vs of 
+big data
+2 these definitions of big data were originally developed in tdwi blog posts, available at tdwi.org/blogs/philip-russom.               tdwi.org  7
+introduction
+quantifications of big data grows continuously. all this makes big data for analytics a moving target 
+that’s tough to quantify.
+user story   t here are various ways to q uantify big data .
+tdwi asked a user how many terabytes he’s managing for analytics, and he said: “i don’t know, because i don’t 
+have to worry about storage. it provides it generously, and i tap it like crazy.” another user said: “we don’t count 
+terabytes. we count records. my analytic database for quality assurance alone has 3 billion records. there’s 
+another 3 billion in other analytic databases.”
+data type variety as a defining attribute of big data.
+one of the things that makes big data really big is that it’s coming from a greater variety of sources 
+than ever before. many of the newer ones are web sources, including logs, clickstreams, and social media. sure, user organizations have been collecting web data for years. but, for most organizations, it’s been a kind of hoarding. we’ve seen similar untapped big data collected and hoarded, such as rfid data from supply chain applications, text data from call center applications, semistructured data from various business-to-business processes, and geospatial data in logistics. what’s changed is that far more users are now analyzing big data instead of merely hoarding it. the few organizations that have been analyzing this data now do so at a more complex and sophisticated level. big data isn’t new, but the effective analytical leveraging of big data is.
+the recent tapping of these sources for analytics means that so-called structured data (which 
+previously held unchallenged hegemony in analytics) is now joined by unstructured data (text and human language) and semistructured data (xml, rss feeds). there’s also data that’s hard to categorize, as it comes from audio, video, and other devices. plus, multidimensional data can be drawn from a data warehouse to add historic context to big data. that’s a far more eclectic mix of data types than analytics has ever seen. so, with big data, variety is just as big as volume. in addition, variety and volume tend to fuel each other.
+user story   h adoop is about data variety , not j ust data volume .
+tdwi found a couple of users who have employed hadoop as an analytic platform. both said the same thing: 
+hadoop’s scalability for big data volumes is impressive, but the real reason they’re working with hadoop is its 
+ability to manage a very broad range of data types in its file system, plus process analytic queries via mapreduce 
+across numerous eccentric data types. it’s not just hadoop; tdwi has heard users make similar comments about other analytic platforms.
+data feed velocity as a defining attribute of big data.
+big data can be described by its velocity or speed. you may prefer to think of it as the frequency of 
+data generation or the frequency of data delivery. for example, think of the stream of data coming off of any kind of device or sensor, say robotic manufacturing machines, thermometers sensing temperature, microphones listening for movement in a secure area, or video cameras scanning for a specific face in a crowd. the collection of big data in real time isn’t new; many firms have been collecting clickstream data from web sites for years, using streaming data to make purchase recommendations to web visitors. with sensor and web data flying at you relentlessly in real time, data volumes get big in a hurry. even more challenging, the analytics that go with streaming data have to make sense of the data and possibly take action—all in real time.big data is remarkably 
+diverse in terms of sources, data types, and entities represented.
+the leading edge of big  
+data is streaming data. 8 tdwi  research
+big data  a n a lyt ic s
+user story   p rocessing streaming big data enables new analytic applications .
+a consultant who specializes in streaming data told tdwi about the video and audio analytic applications he’s 
+looking into: “think about the algorithms that enable us to parse text and perform sentiment analysis, sometimes 
+in real time. very similar algorithms can parse video images to document and analyze changes in the thing that’s 
+being imaged. for example, satellite images could monitor and analyze troop movements, a flood plane, cloud patterns, or grass fires. or a video analysis system could monitor a sensitive or valuable facility, watching for possible intruders, then alert authorities in real time.
+“you can implement similar applications with sound monitoring. one of my analytic applications involves 2,000 
+underground microphones that listen for movement in geologic formations. i hope that the big data the application 
+is collecting can eventually help predict earthquakes.”
+defining big data a nalytics
+again, big data analytics is where advanced analytic techniques operate on big data. the definition is 
+easy to understand, but do users actually use the term? to quantify this question, the survey for this report asked: “which of the following best characterizes your familiarity with big data analytics and how you name it?” (see figure 2.) the survey results show that most users understand the concept of big data analytics, whether they have a name for it or not:
+few respondents are unfamiliar with the concept. only 7% report that they “haven’t seen or heard of 
+anything resembling big data analytics.”
+most users surveyed don’t have a name for big data analytics. even so, they understand the definition 
+(65% of respondents). 
+roughly a quarter of respondents have a name for big data analytics. twenty-eight percent both 
+understand the concept and have named it.
+which of the following best characterizes your familiarity with big data analytics and how you name it?
+i haven’t seen or heard of anything resembling big data analytics. 7%
+i know what you mean, but i don’t have a formal name for it. 65%
+i know what you mean, and i have a name for it. 28%
+figure 2. based on 325 respondents.
+most of the survey respondents who report having a name for big data analytics typed the name they 
+use into the survey software. the name entered most often is the term used in this report:  “big data analytics” (18% in figure 3). similar terms appeared, such as large-volume or large-data-set analytics (7%). many use the popular term advanced analytics (12%), or they simply call it analytics (12%). a few common terms were entered, such as data warehousing (4%), data mining (2%), and predictive analytics (2%). a whopping 43% entered a unique name, showing that names for analytic methods are amazingly diverse.
+finally, a few survey respondents entered humorous but revealing terms such as honking big data, my 
+day job, pain in the neck, and we-need-to-buy-more-hardware analytics.most users are familiar 
+with big data analytics 
+but don’t use the term.
+when users have a  
+term, it’s most often 
+“big data analytics.”               tdwi.org  9
+introduction
+enter the term you use for big data analytics.
+big data analytics 18%
+advanced analytics 12%
+analytics 12%
+large-volume or large-data-set analytics 7%
+data warehousing 4%
+data mining 2%
+predictive analytics 2%
+other (miscellaneous unique terms) 43%
+figure 3. based on 92 respondents who report having a name for big data analytics.
+why put big data and a nalytics together now?
+big data provides gigantic statistical samples, which enhance analytic tool results. most tools designed 
+for data mining or statistical analysis tend to be optimized for large data sets. in fact, the general rule is that the larger the data sample, the more accurate are the statistics and other products of the analysis. instead of using mining and statistical tools, many users generate or hand-code complex sql, which parses big data in search of just the right customer segment, churn profile, or excessive operational cost. the newest generation of data visualization tools and in-database analytic functions likewise operate on big data.
+analytic tools and databases can now handle big data. they can also execute big queries and parse 
+tables in record time. recent generations of vendor tools and platforms have lifted us onto a new plateau of performance that is very compelling for applications involving big data.
+the economics of analytics is now more embraceable than ever. this is due to a precipitous drop 
+in the cost of data storage and processing bandwidth. the fact that tools and platforms for big data analytics are relatively affordable is significant because big data is not just for big business. many small-to-midsize businesses (especially those deep into digital processes for sales, customer interactions, or supply chain) also need to manage and leverage big data.
+there’s a lot to learn from messy data, as long as it’s big. most modern tools and techniques for 
+advanced analytics and big data are very tolerant of raw source data, with its transactional schema, 
+non-standard data, and poor-quality data. that’s a good thing, because discovery and predictive analytics depend on lots of details—even questionable data. for example, analytic applications for fraud detection often depend on outliers and non-standard data as indications of fraud. so, be careful: if you apply etl and data quality processes to big data as you do for a data warehouse, you run the risk of stripping out the very nuggets that make big data a treasure trove for advanced analytics.
+3
+big data is a special asset that merits leverage. that’s the real point of big data analytics. the new technologies and new best practices are fascinating, even mesmerizing, and there’s a certain macho coolness to working with dozens of terabytes. but don’t do it for the technology. put big data and discovery analytics together for the new insights they give the business.
+analytics based on large data samples reveals and leverages business change. the recession has 
+accelerated the already quickening pace of business. the recovery, though welcome, brings even more change. in fact, the average business has changed beyond all recognition because of the recent economic recession and recovery. the change has not gone unnoticed. businesspeople now share a wholesale recognition that they must explore change just to understand the new state of the business. analytic platforms today 
+handle big data better  
+than ever.
+big data is an enterprise 
+asset that yields actionable business insights.
+3  the preparation of big data for advanced analytics rarely follows the same best practices we associate with mainstream data warehousing, 
+reporting, and olap. to understand the differences, see the tdwi checklist report data requirements for advanced analytics , available 
+on tdwi.org. 10 tdwi  research
+big data  a n a lyt ic s
+even more compelling, however, is the prospect of discovering problems that need fixing (such as 
+new forms of customer churn and competitive pressure) and opportunities that merit leverage (such as new customer segments and sales prospects).
+the state of big data analytics
+big data a nalytics a doption
+big data analytics is a fast-growing and influential practice. but how many user organizations are actually doing it? to find out, this report’s survey asked respondents: “does your organization execute advanced analytics against big data today?” (see figure 4.)
+advanced analytics is fairly common today. roughly three quarters (74%) of organizations surveyed 
+have adopted some form of analytics today, regardless of the analytic method or tool type, whether with big data or not. this reveals a strong adoption of advanced analytics, which isn’t a surprise, given that it’s been around for at least 15 years. (later, figure 16 will reveal which analytic methods are the most common today.)
+analytics doesn’t require big data. the two get jammed into the same sentence so much lately that 
+we forget that they don’t have to go together. in fact, 40% of survey respondents practice advanced analytics without big data.
+one-third of organizations (34%) do big data analytics today, although it’s new. in other words, they 
+practice some form of advanced analytics, and they apply it to big data. this is a respectable presence for big data analytics, given the newness of the combination of advanced analytics and big data.
+does your organization execute advanced analytics against big data today?
+figure 4. based on 325 respondents. 
+benefits of big data a nalytics
+we just saw that user organizations have adopted big data analytics in appreciable numbers. to 
+determine the potential benefits that are driving the adoption, tdwi’s survey asked: “which of the following benefits would ensue if your organization implemented some form of big data analytics?” the most likely benefits (seen at the top of figure 5) are those most often selected by survey respondents, and the likelihood of a benefit declines as the list proceeds downward.advanced analytics is 
+common, and big data 
+analytics has a good 
+presence.
+big data analytics 
+can benefit customer 
+relations, business 
+intelligence, and many 
+analytic applications.we practice some form of advanced analytics, but not with big data 40%
+we practice some form of advanced analytics, and we apply it to big data 34%
+we do not practice any form of advanced analytics, and we are not leveraging big data via analytics. 23%
+don’t know 3%
+40%   we practice some form of advanced analytics,
+but not with big data.
+we practice some form of advanced analytics,   34%
+and we apply it to big data.we do not practice any form of advanced   23%
+analytics, and we are not leveraging big data 
+via analytics.don’t know   3%               tdwi.org  11
+the state of big data analytics
+anything involving customers could benefit from big data analytics. near the top of the list 
+(in figure 5), this includes better-targeted social-influencer marketing (61%), customer-base segmentation (41%), and recognition of sales and market opportunities (38%). recent economic changes worldwide have changed consumer behaviors. big data analytics can help develop definitions of churn and other customer behaviors (35%), as well as an understanding of consumer behavior from clickstreams (27%).
+business intelligence in general can benefit from big data analytics. this could result in more 
+numerous and accurate business insights (45%), an understanding of business change (30%), better planning and forecasting (29%), and the identification of root causes of cost (29%).
+specific analytic applications are likely beneficiaries of big data analytics. for example, consider 
+analytic applications for the detection of fraud (33%), the quantification of risks (30%), or market sentiment trending (30%). at the leading edge, big data analytics might help automate decisions for real-time business processes such as loan approvals or fraud detection (37%).
+potential benefits entered by survey respondents selecting “other” include customer loyalty, service 
+experience optimization, healthcare delivery optimization, and supplier performance based on cost and quality.
+which of the following benefits would ensue if your organization implemented some form of big data 
+analytics? (select five or fewer.)
+better targeted social influencer marketing 61%
+more numerous and accurate business insights 45%
+segmentation of customer base 41%
+recognition of sales and market opportunities 38%
+automated decisions for real-time processes 37%
+definitions of churn and other customer behaviors 35%
+detection of fraud 33%
+greater leverage and roi for big data 30%
+quantification of risks 30%
+trending for market sentiments 30%
+understanding of business change 30%
+better planning and forecasting 29%
+identification of root causes of cost 29%
+understanding consumer behavior from clickstreams 27%
+manufacturing yield improvements 6%
+other 4%
+figure 5. based on 1,635 responses from 325 respondents; 5 responses per respondent, on average.
+barriers to big data a nalytics
+big data analytics has its benefits, as we just saw. yet, it also has barriers. to get a sense of which 
+barriers are more likely than others, this report’s survey asked: “in your organization, what are the top potential barriers to implementing big data analytics?” the most likely barriers (seen at the top of figure 6) are those most often selected by survey respondents, and the likelihood of a barrier declines as the list proceeds downward.problems with skills, 
+sponsors, and software are the leading barriers. 12 tdwi  research
+big data  a n a lyt ic s
+inadequate staffing and skills are the leading barriers to big data analytics (46%). after all, many 
+organizations are still new to big data analytics. and its skill set is not quite the same as that for business intelligence and data warehousing, for which most organizations have developed their skills. other skill-related barriers include the difficulty of architecting a big data analytic system (33%) and problems with making big data usable for end users (22%).
+a lack of business support can hinder a big data analytics program. survey respondents pointed to a 
+lack of business sponsorship (38%) and a lack of a compelling business case (28%), plus the related issue of overall cost (42%).
+problems with database software can be barriers to big data analytics. issues arise when the current 
+database software lacks in-database analytics (32%), has scalability problems with big data (23%), can’t process analytic queries fast enough (22%), or cannot load data fast enough (21%). in a related issue, managing big data in a data warehouse is challenging when that warehouse is modeled for reports and olap only (22%). 
+possible barriers entered by survey respondents selecting “other” include competing with other 
+initiatives, lack of test and control rigor, and sourcing and rationalizing big data from multiple systems.
+in your organization, what are the top potential barriers to implementing big data analytics? (select five 
+or fewer.)
+inadequate staffing or skills for big data analytics 46%
+cost, overall 42%
+lack of business sponsorship 38%
+difficulty of architecting big data analytic system 33%
+current database software lacks in-database analytics 32%
+lack of compelling business case 28%
+scalability problems with big data 23%
+cannot make big data usable for end users 22%
+current database software can’t process analytic queries fast enough 22%
+current data warehouse modeled for reports and olap only 22%
+current database software cannot load data fast enough 21%
+can’t find hadoop experts to hire 11%
+can’t fund hadoop’s high operational expenses 7%
+other 6%
+figure 6. based on 1,153 responses from 325 respondents; 3.5 responses per respondent, on average. 
+big data: problem or opportunity?
+tdwi has seen many user organizations emerge only recently from a scalability crisis where big data was more of a curse than a blessing. with that in mind, we asked: “in your organization, is big data considered mostly a problem or mostly an opportunity?” (see figure 7.)
+only 30% consider big data a problem. there’s no doubt that big data presents technical challenges due 
+to its volume, variety, and velocity. data volume alone is a showstopper for some organizations.
+the vast majority (70%) considers big data an opportunity. through exploratory, detailed analyses of 
+big data, a user organization can discover new facts about their customers, markets, partners, costs, and operations—then use that information for business advantage.big data is mostly 
+an opportunity, 
+not a problem.               tdwi.org  13
+organizational issues
+in your organization, is big data considered mostly a problem or mostly an opportunity?
+figure 7. based on 325 responses 
+user story   a doption of big data analytics is driven by a perfect storm of technologies ,
+business management , and economics .
+“it’s been kind of like a perfect storm, where several things came together to make big data analytics practical 
+and affordable,” said a bi director interviewed by tdwi. “for one thing, there are more analytic products to 
+consider now. the new analytic databases are pretty affordable. and they’re designed specifically for analytics. for 
+another thing, firms have started thawing budgets—which the recession had frozen—so there’s more corporate money to spend on analytics. and there’s been an attitude shift that’s hard to pinpoint; it seems like more managers today are convinced of the management power of analytics.
+“i think that an even more beneficial change has been that key infrastructure pieces—like data storage, cpus, 
+memory, and network bandwidth—have both gotten better and come down in price. oddly enough, scaling 
+up to big data was a serious problem just a few years ago. we survived the scalability crisis by buying cheap 
+infrastructure, such that big data is now a good thing instead of a problem. now, if we could just solve the real-time data processing crisis, we’d be all set!”
+organizational issues
+ownership and control of big data a nalytics
+the most common owner of big data analytics is the bi/d w team (41% in figure 8). this is no surprise, 
+since the majority of organizations centralize as many business intelligence (bi) and data warehouse 
+(dw) functions as possible through a single team. furthermore, several survey respondents selected “other” and explained that they have a separate analytics team, although it’s managed through the bi/dw team.
+occasionally a department owns and controls big data analytics (21%). although this flies in the face 
+of centralization best practices for enterprise business intelligence (ebi) and the enterprise data warehouse (edw), there are good reasons why some departments go rogue with their own team and platforms for analytics, as explained in the next section of this report.analytics is usually 
+owned by a bi/d w  
+team; less often by  
+a department.30%    problem —because it’s hard to manage 
+from a technical viewpoint
+opportunity —because it yields detailed   70%
+analytics for business advantage 14 tdwi  research
+big data  a n a lyt ic s
+in your organization, who owns or controls big data analytics?
+enterprise data warehouse or bi team 41%
+individual departments 21%
+central it or cio’s office 12%
+data architecture team 11%
+other 15%
+figure 8. based on 109 respondents who report practicing big data analytics. 
+big data a nalytics can have a departmental focus
+analytic applications are departmental by nature. just about any analytic application you think of 
+is focused on tasks, data domains, and business opportunities that are associated with specific departments. for example, customer base segmentation should be owned and executed by marketing and sales departments. the actuarial department does risk analysis. the procurement department does supply and supplier analysis. hence, the average analytic application satisfies departmental requirements, not enterprise ones, even if implemented by an enterprise team.
+not all bi/d w technology stacks are designed for advanced analytics. in most organizations, users 
+have designed and optimized their stacks for reporting, performance management, and olap. 
+this is natural, since these are the most common deliverables that must come out of a bi/dw solution. furthermore, this optimization is invaluable for “big picture” reports and analyses that span enterprisewide processes (especially financial ones). such stacks are also capable of satisfying most departmental requirements for reporting and olap. but in many organizations, the bi/dw technology stack is simply not designed to satisfy departmental requirements for advanced analytics and big data. note that this limitation is due to a conscious design decision that users made, not the failure of a vendor product.
+some departments deploy their own platforms for big data and analytics. they do this when the 
+department has a strong business need for analytics with big data, plus the budget and sponsorship to back it up. in summary, in some organizations (approximately 21%), big data analytics is a departmental affair, implemented by the department’s team on a departmentally owned platform.
+job titles for big data a nalytics
+analysts design and execute analytics. of course, that’s why they’re called analysts. this includes the popular job title business analyst (14% in figure 9) and the more-or-less equivalent title data analyst (6%). note that a relatively large number of survey respondents entered director and manager titles for analytics (14%), indicating that analytic teams exist and that these teams have managers.
+architects are regularly involved in analytics. we can see this from survey responses for data architect 
+(10%) and the related title data scientist (4%).
+engineers and researchers use analytics. people who develop products need analytics, as seen in the 
+job titles engineer (10%), research analyst (3%), and r&d specialist (2%).
+bi professionals do analytics. this includes bi directors (5%) and bi specialists (3%).a wide range of people are involved in the design and execution of analytics. almost one-third of survey 
+responses (29%) were a mixed bag, describing marketers, consultants, statisticians, data governors, risk managers, and so on. this breadth of job titles is significant because it shows that analytics is not much of the action in big 
+data analytics is at the 
+departmental level.
+with big data analytics, 
+the most common job 
+titles are business  
+analyst and data analyst.               tdwi.org  15
+best practices
+just for an analytic specialist. on the contrary, analytics is becoming a standard competency for a 
+wide range of business and technology people.
+enter the job titles of people who design and execute advanced analytics in your organization.
+business analyst 14%
+director or manager of analytics 14%
+data architect 10%
+engineer 10%
+data analyst 6%
+bi director 5%
+data scientist 4%
+bi specialist 3%
+research analyst 3%
+r&d specialist 2%
+other 29%
+figure 9. based on 113 responses from 109 respondents who report practicing big data analytics. 
+best practices in big data analytics
+volume growth of a nalytic big data
+in recent years, tdwi has observed a strong trend toward the application of advanced analytics to 
+very large data sets. to help quantify the perceived trend, the survey asked: what’s the approximate total data volume that your organization manages only for analytics, both today and in three years? (see figure 10.) due to branching in the survey, the question was posed only to survey respondents who reported (in their responses to earlier survey questions) that they work for an organization that is already practicing big data analytics. in other words, these people speak from experience, not mere opinion. note that they are describing big data only for analytics, not for bi, dw, or other enterprise applications.
+one-third of organizations surveyed have already broken the 10 tb barrier (37%). in fact, the 10- to 
+100-terabyte range received more responses than any other, making it the norm for today’s volume of big data specifically applied to advanced analytics.
+smaller analytic data sets will become less common as they grow into larger ones. in forecasting 
+analytic data volumes for three years from now, survey respondents project considerably fewer analytic data sets in the 1 tb, 1–3 tb, and 3–10 tb ranges. a tdwi technology survey run in august 2011 returned almost identical results.
+large analytic data sets will become more common. the number of very large analytic data sets 
+will triple or quadruple in the 100–500 tb and 500+ tb ranges. clearly, users conduct advanced analytics with ever-larger analytic data sets.
+today almost all user organizations quantify analytic big data in terabytes. on its current trajectory, however, big data for analytics will soon cross into petabytes, which will become the prevailing unit of measure. growth is the nature of big data, and user organizations should conduct periodic capacity planning exercises to ensure they can continue to scale up and perform with big data analytics.although measured in 
+terabytes today, big data for analytics is on the cusp of petabytes. 16 tdwi  research
+big data  a n a lyt ic s
+what’s the approximate total data volume that your organization manages only for analytics, both today 
+and in three years?
+  today
+  in three years
+<1 tb8%
+2%
+1–3 tb14%
+4%
+3–10 tb22%
+12%
+10–100 tb37%
+31%
+100–500 tb6%
+21%
+>500 tb5%
+20%
+don’t know8%
+10%
+figure 10. based on 109 respondents who report practicing big data analytics.
+user story   b ig data is often filtered down to small , significant data sets .
+a bi professional at a prominent internet-based business told tdwi: “we load 200 gb a day into our data 
+warehouse. but that’s processed down from several terabytes of web log and clickstream data. we mix this 
+big data with data about our customers drawn from other touch points, then analyze it. although the web data 
+is streaming, we collect the stream on disk, then process it down and analyze it overnight. our next step is to process and analyze streaming big data in real time in hopes of influencing customer behavior in mid-process. we’re definitely a customer-oriented business, so understanding customers and serving them better is the goal of 
+analytics. we just need to do it both after the fact in batch and—eventually—in real time.”
+managing a nalytic big data
+one of the big questions for big data is: where should you manage it and operate on it? after all, 
+there are many vendor-built database platforms available today that can handle large analytic data sets. and user organizations have diverse business and technology requirements that lead them to equally diverse designs, models, and architectures.
+to get a sense of what users think about these issues, this report’s survey asked a pair of related 
+questions: today, where is big data for advanced analytics managed and operated on? where would you prefer that big data for advanced analytics be managed and operated on? (see figure 11.)
+the ed w is a much-used and much-preferred platform for analytics. roughly two-thirds of users 
+surveyed report using an edw today (64%), and two-thirds say it’s a preference (63%). as 
+pointed out elsewhere in this report, some edws were originally designed by users for reporting, performance management, and olap. because of this, some edw designs can also handle advanced analytics—in terms of scalability and query performance—and some cannot. again, this is a issue with users’ designs, not a problem with vendor products. then there are questions of sponsorship, funding, and enterprise versus departmental analytic requirements. whether to manage analytic big data in a shared, centralized edw or in a separate-but-related database is one of the basic architectural decisions users face when starting or expanding a program for big data analytics.manage big data in the 
+edw? buy a vendor’s 
+analytic database? adopt 
+a new platform?               tdwi.org  17
+best practices
+the tradition of analytic databases outside the ed w proper continues, but with a twist. on the one hand, 
+survey respondents anticipate reducing the number of data marts and operational data stores (odss). 
+this is no surprise, since we’re all trained to keep the proliferation of these in check. on the other hand, the survey shows that users are already using vendor databases designed for big data analytics (28%), and these are considered preferable (30%). users interviewed by tdwi described their use of new vendor-built analytic databases as being akin to an old-fashioned data mart, but with far greater data volume, detailed data, and data type diversity. only time will tell whether new analytic databases will lead to the proliferation abuses we associate with data marts.
+new types of analytic platforms are coming. a few users report using cloud-based analytic platforms 
+today, and many more users would prefer them. tdwi expects various types of clouds to become common platforms for analytics within a few years. the survey also shows that hadoop is already in use by 24% of respondents, which is a respectable presence. given the open-source nature of hadoop, tdwi suspects that many of these are simply downloads that are in experimental use. hadoop is so heavily hyped at the moment that it is difficult to say whether its current experimental use will evolve into a permanent presence in it.
+other analytic platform choices abound. 
+some of these were entered by survey responses who selected 
+“other,” such as a separate sandbox attached to the edw, a hierarchy of databases within the 
+edw environment, an analytic data warehouse, a farm of data warehouse appliances, and hand-coded software.
+today, where is big data for advanced analytics managed and operated on? where would you prefer that big data for advanced analytics be managed and operated on?
+  today          
+  prefer
+enterprise data warehouse (ed w) 64%
+63%
+traditional database outside ed w (mart, ods) 38%
+20%
+vendor database designed for big data analytics 28%
+30%
+distributed file system, like hadoop 24%
+30%
+cloud-based analytic platform 12%
+30%
+collections of flat files 17%
+5%
+other 7%
+5%
+figure 11. based on 207 responses from 109 respondents who report practicing big data analytics; 1.9 responses per 
+respondent, on average.
+data types for big data
+remember the three vs of big data? the second v is data variety, and it’s manifested by a growing 
+number of data types that are being managed and analyzed with increasing rapidity.
+structured data maintains hegemony over other data types. the majority of data handled via analytic 
+platforms today falls under the rubric structured data. this is primarily about the tables and other data structures of relational databases. but other sources yield predictable structures, such as the record formats of most applications and the character-delimited rows of many flat files. in our survey, a whopping 92% of respondents report handling structured data today. (see figure 12.)structured data still 
+rules, but is slowly joined by many other  
+data types. 18 tdwi  research
+big data  a n a lyt ic s
+semistructured and complex data are coming on strong. the hegemony of structured data types will 
+eventually be challenged by a wider range of data types. in particular, today 54% of respondents report handling some form of semistructured data (xml and similar standards) or complex data (hierarchical or legacy sources). these data types are driven up by increased use of industry standards (swift, acord, hl7) and xml applied to business-to-business data exchange (which tends to be modeled in hierarchies).
+unstructured data (mostly text expressing human language) continues to gain (35%). tdwi has 
+interviewed many of its members who use text mining or text analytics tools to convert facts (discovered in textual documents) into structured data (typically a record or table row per discovered fact). for example, insurance companies regularly extract facts from text gathered in the claims process, then use that data to extend their analytic data sets for risk management and fraud detection.
+web data is finally getting the attention it deserves. users interviewed by tdwi talked about how for 
+years they didn’t have the skills or proper it platforms for analyzing web data. now that they have 
+the skills and the platforms, they’re aggressively exploring social media data (blogs, tweets, social networks; 34%) and web logs and clickstreams (31%).
+real-time data types lag at the moment. but they stand a good chance of becoming more common as 
+real-time technologies continue to improve and to be adopted by user organizations. this includes event data (45%), spatial data (gps output; 29%), and machine-generated data (from sensors, rfid chips, robots, and various devices; 28%).
+which of the following data types are you collecting as big data and/or using with advanced analytics 
+today? select all that apply.
+structured data (tables, records) 92%
+semistructured data (xml and similar standards) 54%
+complex data (hierarchical or legacy sources) 54%
+event data (messages, usually in real time) 45%
+unstructured data (human language, audio, video) 35%
+social media data (blogs, tweets, social networks) 34%
+web logs and clickstreams 31%
+spatial data (long/lat coordinates, gps output) 29%
+machine-generated data (sensors, rfid, devices) 28%
+scientific data (astronomy, genomes, physics) 6%
+other 5%
+figure 12. based on 450 responses from 109 respondents who report practicing big data analytics; 4.1 responses per 
+respondent, on average. 
+user story   m ixing data types and data velocities enables new analytic applications .
+here’s the kind of streaming big data application that many people are dreaming of, as described in a tdwi 
+interview: “imagine i’m a consumer walking around downtown in a city, and i’m shopping. now imagine letting 
+a shopping service know the kinds of goods i’m looking for. as i walk, my gps coordinates could stream to the 
+shopping service, its analytic application could match my interests with goods available locally, then point me to the appropriate stores.”               tdwi.org  19
+refresh rates for a nalytic data
+data velocity is the third v in the three vs of big data. data velocity concerns both frequency and 
+speed. in other words, data velocity is about how frequently data is generated by an application. but it can also be about the speed of data delivery into an analytic data set once data is generated. for example, streaming data is an extreme case where the generation and delivery of data is continuous; the analysis of that data may also be continuous.
+most analyses today, however, aren’t that continuous. a deployed solution for advanced analytics will 
+rerun analyses as data and business situations change. for example, predictive models are rescored and analytic databases are updated. to get a sense of how often this occurs, the survey asked: in your organization, what percent of analyses are rerun and/or rescored at the following intervals?  (see figure 13.)
+based on survey responses, today most analytic updates and rescores occur daily, weekly, monthly, 
+and/or annually. in other words, the refresh of most deployed analyses is latent, with intraday refresh (every few hours, hourly, or in real time) being rare. this puts analytics behind the times, as compared to reporting, where real-time refresh is the norm for some report types.
+with other surveys run by tdwi, respondents claim to refresh standard reports many times 
+intraday, with dashboard-style reports being refreshed the most frequently.
+4 this is due to operational 
+bi—a popular management technique that requires frequently refreshed reports. note that reporting took many years to cross the line from overnight refresh to frequent intraday refreshes. the march toward real time is affecting many enterprise applications types; no doubt, analytics will soon come closer to real time as part of this trend.
+in your organization, what percent of analyses are rerun and/or rescored at the following intervals?
+annually 15%
+monthly 35%
+weekly 14%
+daily 24%
+every few hours 5%
+hourly 4%
+real time 4%
+figure 13. based on 96 respondents who report practicing big data analytics.
+user story   r eal-time processing of streaming big data is crucial to finding meaningful data 
+and reacting to it.
+a consultant who specializes in streaming data told tdwi recently: “you don’t need all of the streaming data. you 
+just need the interesting pieces or just the one piece that identifies what you’re looking for. we’ve all seen video 
+footage from the u.s. military’s unmanned jet drones. a drone is processing several frames of video per second 
+looking for shapes or light signatures that match its programming. for example, it might be looking for shapes that look like tanks or sun reflections that could come from metallic weapons. the drone deletes almost all of the frames, because they’re not of interest. and that helps to avoid data glut that could choke the system.”real-time analytics are 
+relatively rare today, but will soon be common.best practices
+4 for example, see figures 8, 10, and 12 in the 2007 tdwi report best practices in operational bi , available on tdwi.org. 20 tdwi  research
+big data  a n a lyt ic s
+replacing a nalytics platforms
+an analytics platform can take many forms. to some users, it’s the analytic tool where they create 
+analytic models or fashion complex queries. to others, it’s the database management system where analytic big data is managed and operated on. it could be both. and everyone longs for heftier hardware for the analytics platform. regardless of the definition, some users are contemplating a replacement of their analytics platforms.
+roughly half of user organizations will keep their analytics platforms. they have no plans to replace 
+the current analytics platforms (47%). no doubt, some would like a replacement, but don’t have the budget or approval to do so. tdwi suspects that many get what they need from the current platform, so they are not compelled to swap it for another.
+a tenth (9%) have already replaced their analytics platform. the survey results aside, a few users 
+interviewed talked about swapping data mining tools for statistical packages or replacing old data marts with new data warehouse appliances or analytic databases.
+one-third anticipate replacing their analytics platform within three years. thirty-three percent say the 
+replacement will occur in 2011, 2012, or 2013. another 11% anticipate a replacement in the four years after that.
+when do you anticipate replacing your current analytics platforms?
+no plans to replace current analytics platforms 47%
+already replaced analytics platforms to accommodate big data 9%
+2011 6%
+2012 17%
+2013 10%
+2014 4%
+2015 5%
+2016 0%
+2017 or later 2%
+figure 14. based on 325 respondents. 
+ripping out and replacing an analytics platform is rather expensive for it budgets and intrusive for 
+business users. yet, this is exactly what more than half of the users surveyed by tdwi say they are contemplating—or have just done. to find out what dire circumstances would lead so many people down such a drastic path, our survey asked: what problems will eventually drive you to replace your analytics platforms?
+big data analytics requires massive performance and scalability. not just any platform can live up to such stringent demands. common problems voiced by users are that old platforms can’t scale to big data volumes (42%), load data too slowly (29%), respond to queries too slowly (24%), lack processing (cpu) capacity for analytics (17%), and can’t handle concurrent mixed workloads (11%).one-third of users will 
+replace their analytics 
+platforms within  
+three years.
+users replace analytic 
+platforms to get 
+better performance, 
+productivity, and modern 
+capabilities.               tdwi.org  21
+sometimes the old analytics platform is a mismatch to today’s requirements. this is revealed by users 
+who complained that their system can’t support the analytic modeling they need (32%) and the current platform is olap-only whereas they need advanced analytics (28%).
+some users need a tool that works the way they want to work. for example, some platforms are poorly 
+suited to self-service for end users (18%) or are poorly suited to visual analytics (11%).
+sometimes users need a new platform that supports modern capabilities. this is evident when the old 
+platform is considered poorly suited to real-time analytics (24%), can’t support in-database analytics (20%), has inadequate support for web services and service-oriented architecture (soa) (14%), lacks support for cloud or virtualization (10%), or has inadequate support for in-memory processing (7%).
+what problems will eventually drive you to replace your analytics platforms? select five or fewer.
+can’t scale to big data volumes 42%
+can’t support analytic modeling we need 32%
+data loading is too slow 29%
+current platform is olap only, and we need advanced analytics 28%
+it cannot keep up with requests for analyses 25%
+poor query response 24%
+poorly suited to real-time analytics 24%
+can’t support in-database analytics 20%
+poorly suited to self-service for end users 18%
+need more processing (cpu) capacity for analytics 17%
+inadequate support for w eb services and soa 14%
+poorly suited to visual analytics 11%
+we need platform that supports mixed workloads concurrently 11%
+we need platform better suited to cloud or virtualization 10%
+inadequate support for in-memory processing 7%
+we need hadoop support 7%
+we want to go with a saas solution 5%
+we want to go with a no-s ql solution 4%
+other 10%
+figure 15. based on 1,098 responses from 325 respondents; 3.4 responses per respondent, on average. best practices 22 tdwi  research
+big data  a n a lyt ic s
+tools, techniques, and trends for  
+big data analytics
+by now, you’ve probably noticed that there are many different options that you can select for your big 
+data analytics program. options include vendor tool types and tool features, users’ techniques and methodologies, and team or organizational structures. the list is long and complex, and it includes a few items you probably haven’t considered seriously. regardless of what project stage you’re in with big data analytics, knowing the available options is foundational to making good decisions about approaches to take and software or hardware products to evaluate.
+to quantify these and other issues, tdwi presented survey respondents with a long list of options 
+for big data analytics. (see figure 16.) the list includes options that have arrived fairly recently (clouds, mapreduce, complex event processing), have been around for a few years but are just now experiencing broad adoption (data visualization, predictive analytics), or have been around for years and are firmly established (statistical analysis, hand-coded sql). the list is a catalog of available options for big data analytics, and responses to survey questions indicate what combinations of analytic functions, platforms, and tool types users are employing today, as well as which they anticipate using in a few years. from this information, we can deduce priorities that can guide users in planning. we can also quantify trends and project future directions for advanced analytics and  big data.
+concerning the list of big data analytics options, the survey asked: “what kinds of techniques 
+and tool types is your organization using for advanced analytics and big data, both today and in three years?” survey responses for these two questions are charted as pairs of bars on the left side of figure 16. within each pair of bars, the value for using today is the percentage of survey respondents who claim to use that option now. similarly, the value of using in three years is the percentage of survey respondents who anticipate using that option in coming years.
+the pairs of bars on the right side of figure 16 portray a slightly different view of option usage. 
+the potential growth bars calculate the per-option difference between responses for using today and using in three years; this delta provides an indication of how much the usage of a big data analytics option will increase or decrease. an option’s commitment value is the percentage of survey respondents who are committed to using that option, whether today, in three years, or both. note that no option will be used by all survey respondents in all time frames, which is why none of the values in figure 16 tally to 100%.good news: there are 
+many options for big 
+data analytics.
+bad news: it’s hard to 
+know them all and select 
+the best one.
+survey responses reveal 
+which options for big data 
+analytics are in common 
+use today.
+survey responses indicate 
+how usage of options for 
+big data analytics will 
+increase or decline.               tdwi.org  23
+what kinds of techniques and tool types is your organization using for advanced analytics and big data, both today and 
+in three years? (checking nothing on a row means you have no plans for that technique or tool.)
+using today       
+using in three yearscommitment       
+potential growth
+advanced data visualization20% 58%47% 27%
+in-memory database9% 32%26% 17%
+real-time reports or dashboards19% 47%36% 16%
+text mining14% 36%30% 16%
+advanced analytics (e.g., mining, predictive)38% 70%53% 16%
+visual discovery9% 29%24% 15%
+predictive analytics30% 55%43% 14%
+private cloud9% 27%22% 12%
+complex event processing (cep)5% 20%16% 11%
+data mining scoring22% 44%33% 11%
+hadoop7% 22%18% 11%
+in-database analytics19% 40%29% 10%
+accelerator (hardware or software based)12% 30%22% 10%
+closed loop; analytic output is input to op apps10% 26%20% 10%
+mapreduce7% 21%17% 10%
+in-line analytics5% 17%13% 8%
+data warehouse appliance19% 37%27% 7%
+no-s ql or non-indexed dbms4% 14%12% 7%
+column-oriented storage engine12% 26%19% 7%
+public cloud4% 14%11% 7%
+software as a service (saas)9% 21%16% 6%
+sandboxes for analytics18% 32%24% 6%
+extreme s ql8% 17%12% 4%
+mixed workloads in a data warehouse11% 21%15% 4%
+analytics processed within the ed w30% 49%32% 2%
+dbms purpose-built for data warehousing22% 32%21% -1%
+analytic databases outside the ed w30% 48%28% -2%
+statistical analysis38% 53%35% -3%
+central enterprise data warehouse (ed w)39% 56%33% -6%
+data marts for analytics46% 65%38% -9%
+dbms designed for transaction processing20% 24%10% -10%
+olap tools38% 45%23% -14%
+hand-coded s ql35% 39%16% -19%
+figure 16. based on varying numbers of responses from 325 respondents. the charts are sorted by the “potential growth”  
+column of values.tools, techniques, and trends 24 tdwi  research
+big data  a n a lyt ic s
+potential growth versus commitment for big data a nalytics options
+figure 16 reveals a number of interesting things about the use of tools and techniques for big data 
+analytics. for example, figure 16 is sorted by the potential growth column in descending order. in this sort order, “advanced data visualization” (adv) appears at the top of the chart, because—with a delta of 27%—this option has the greatest potential growth.
+however, not all organizations plan to use the adv option. in the commitment column, we see 
+that 58% of survey respondents have committed to implement adv at some point. conversely, 42% of respondents have no plans to implement it. by scanning the commitment column in figure 16, you can see that 58% is a relatively high level of commitment for a big data analytics option. given adv’s strong potential growth and strong commitment, it’s likely that most organizations will include some form of advanced data visualization in their arsenal of big data analytics options.
+from this, we see that there are two forces at work in figure 16, as well as in the planning processes 
+of user organizations.
+• potential growth. the potential growth chart subtracts using now from using in three years, and the delta provides a rough indicator for the growth or decline of usage of options for big data analytics over the next three years. the charted numbers are positive or negative. note that a negative number indicates that the use of an option may decline or remain flat instead of grow. a positive number indicates growth, and that growth can be good or strong.
+• commitment. collected during the survey process, the numbers in the commitment column represent the percentage of survey respondents (based on a total of 325 respondents) who selected using today and/or using in three years. note that the measure of commitment is cumulative, in that the commitment may be realized today, in the near future, or both.
+ furthermore, the survey question told respondents: “checking nothing on a row means you have no plans for that technique or tool.” this way, if a survey respondent has no plans for an option, he/she could leave it unchecked.
+• balance of commitment and potential growth. to get a complete picture, it’s important to look at the metrics for both growth and commitment. for example, some features or techniques may have significant growth rates, but within a weakly committed segment of the user community (clouds, saas, no-sql databases). or they could have low growth rates but be strongly committed through common use today (analytic data marts, olap tools). options seeing the greatest activity in the near future will most likely be those with strong ratings for both growth and commitment (adv, advanced analytics, predictive analytics).
+ to visualize the balance of growth and commitment, figure 17 includes the potential growth and commitment numbers from figure 16 as opposing axes of a single chart. big data analytics options are plotted in terms of growing or declining usage ( x-axis) and narrow or broad 
+commitment (y-axis).commitment and 
+potential growth are  
+two different metrics  
+for the future of big  
+data analytics.               tdwi.org  25
+options for big data analytics plotted by potential growth and commitment
+figure 17. plots are approximate, based on values from figure 16.tools, techniques, and trends0% weak 25% moderate 50% strong 75%
+potential growthcommitment
+-25% declining -12.5% flat 0% good 12.5% strong +25%
+1. strong-to-moderate 
+commitment, strong 
+potential growth
+2. moderate
+commitment,
+good potential 
+growth
+3. weak commitment,
+good potential growth4. strong commitment,
+/f_lat or declining growth
+data marts
+for analytics
+central
+edw
+statistical
+analysis
+olap tools
+hand-coded sql
+dbms built
+for oltpanalytics
+in edw
+analytic
+databases data
+mining
+in-database
+analytics
+data warehouse
+appliances
+analytic
+sandboxesprivate
+cloud columnar
+dbms
+closed loopdbms built
+for dwadvanced
+analytics
+advanced data
+visualization
+predictive
+analytics
+real-time
+dashboards
+text mining
+in-memory
+database
+visual
+discovery
+ mapreduce mixed
+workloadssaas hadoop
+cep extreme
+sql inline analytics
+no-sql dbms
+public cloud
+  26 tdwi  research
+big data  a n a lyt ic s
+trends for big data a nalytics options
+figures 16 and 17 reveal that most big data analytics options will experience some level of growth in 
+the near future. the figures also indicate which options will grow the most, as well as those that will stagnate or decline. in particular, four groups of options stand out based on combinations of growth and commitment. (see the groups circled, numbered, and labeled in figure 17.) the groups are indicative of trends in advanced analytics and big data.
+group 1 – s trong-to-moderate commitment, strong potential growth.
+options that have the highest probability of altering best practices for big data analytics are those 
+with strong potential growth (according to survey results) coupled with a moderate or strong organizational commitment. group 1 meets both of those requirements, and it includes tool types and techniques that tdwi has seen adopted aggressively in recent years. furthermore, today’s strongest trends in bi, data warehousing, and analytics are apparent in group 1:
+advanced analytics. the strongest commitment among options for big data analytics is to advanced 
+analytics (in the upper, right-hand corner of figure 17). closely related options such as predictive analytics, data mining, and statistical analysis have a similar commitment. recall that advanced analytics is a collection of techniques and tool types, including predictive analytics, data mining, statistical analysis, complex sql, data visualization, artificial intelligence, natural language processing, and database methods that support analytics. the move into advanced analytics (beyond reporting and olap) is one of the strongest trends in bi today, for all the reasons explained early in this report. given the strong corporate commitment that advanced analytics has, it will no doubt be a leading growth area for users and vendors alike for several years to come.
+visualization. the strongest potential growth among options for big data analytics is projected for 
+advanced data visualization (adv). adv is the rightmost option plotted on figure 17, and the closely related option visual discovery is also in group 1. adv is a natural fit for big data analytics. adv can scale its visualizations to represent thousands or millions of data points—unlike standard pie, bar, and line charts. adv can handle diverse data types and then present analytic data structures that aren’t easily flattened onto a computer screen (such as hierarchies and neural nets). most adv tools and functions today support interfaces to all leading data sources so that business analyst users can explore data widely in search of just the right analytic data set—and usually do so in real time. furthermore, most adv tools have evolved for ease of use and self-service, in response to growing constituencies of analytic users. anecdotally speaking, tdwi has seen many organizations adopt adv and visual discovery, as both standalone analytic tools and general-purpose bi platforms, on both departmental and enterprise levels.
+real time. operational business intelligence is a business practice that measures and monitors the 
+performance of business operations frequently. it is enabled by bi technologies, especially dashboard-style reports. although the definition of “frequently” varies, most operational bi implementations fetch data in real time (or close to it) to refresh real-time management dashboards (which are poised for growth in figure 17). users’ aggressive adoption of operational bi in recent years has (among other things) pushed bi technologies into real-time operation, as seen in management dashboards. as users evolve operational bi to be more analytic (not merely reporting based on metrics), analytics are likewise being pushed into real time.visualization and 
+advanced analytics are 
+poised for aggressive 
+adoption.
+real time is the 
+strongest bi trend, yet 
+it hasn’t hit big data 
+analytics much as yet.rates of growth and 
+commitment identify 
+four groups of options 
+for big data analytics.               tdwi.org  27
+the third v in the three vs of big data stands for velocity. as numerous examples in this report 
+have shown, there are many real-world applications of analytics to streaming big data available today, plus more coming. but real-time analytic applications are still new, and they are practiced today by relatively few organizations. perhaps this explains why real-time and streaming data didn’t fare well in this report’s survey. (for example, figure 13 shows low use of real-time data among survey respondents.) even so, given that real-time is the strongest trend in bi today, it will no doubt transform analytics soon, just as it has transformed reporting.
+in-memory databases. one way to get real-time response from a database is to manage it in server 
+memory, thereby eliminating disk i/o and other speed bumps. for several years now, tdwi has seen consistent adoption of in-memory databases among its members and other organizations. an in-memory database can serve many purposes, but in bi they usually support real-time dashboards for operational bi, and the database usually stores metrics, key performance indicators (kpis), and sometimes olap cubes. we’re now seeing a similar growth among users in the adoption of in-memory databases for advanced analytics, typically to speed access to and the scoring of analytic models. leading vendors now offer data warehouse appliances with flash memory or solid state drives, to which in-memory databases will soon move.
+unstructured data. we all give lip service to the fact that there’s valuable, actionable information 
+in natural language text and other unstructured data. yet, organizations haven’t tapped that information much until very recently. tools for text mining and text analytics have slowly gained usage because they can find facts about key business entities in text and turn those facts into usable, structured data. the resulting data can be applied to customer sentiment analysis, but it has many other applications, too. for example, many insurance companies use text analytics to parse the mountains of text that result from the claims process, turn text into structured records, then add that data to the samples studied via data mining or statistical tools for risk, fraud, and actuarial analyses.
+group 2 – moderate commitment, good potential growth.
+different types of analytic database platforms dominate group 2. thanks to recent innovations 
+by vendor firms, we now have more analytic database platforms to choose from, including data warehouse appliances, dedicated analytic dbmss, columnar data stores, and sandboxes—plus older options. and thanks to user adoption, the newer analytic database platforms have achieved moderate commitment and good potential growth.
+5
+for most user organizations facing a new analytics program (or a renovation of an established one), one issue is a determining factor: can the current or planned enterprise data warehouse (edw) handle big data and advanced analytics without degrading performance of other workloads for reporting and online analytic processing (olap)? a simpler question is: can our edw perform and scale with concurrent mixed workloads? the answer to this question will determine whether analytic data is managed and operated on in the edw proper or in a separate platform (which is usually integrated with the edw).gating factor: manage 
+and operate on analytic big data in an ed w? 
+if not, where?
+5  for a complete list and discussion of vendor analytic database platforms, replay the tdwi webinar “data warehouse appliances: 
+an update on the state of the art,” online at tdwi.org.tools, techniques, and trends 28 tdwi  research
+big data  a n a lyt ic s
+as we saw in figure 11, the edw is a much used and much preferred platform for analytics, which 
+proves that many edws can, indeed, scale and perform with mixed workloads. in fact, in-database analytics has very recently become common, showing that edws can handle advanced analytic workloads. yet, not everyone is willing to host analytics on an edw. that’s because the management of big data and the processing workloads of advanced analytics make stringent demands of server resources, such that (depending on the edw platform you’ve assembled) they can rob server resources from other data warehouse workloads, resulting in slow queries and report refreshes. to avoid performance degradation due to mixed workloads, some bi professionals prefer to isolate big data and analytic workloads on separate platforms outside the edw. performance aside, separate analytic database platforms make sense when analytics is funded or controlled by a department instead of the edw’s sponsor (as seen in figure 8).
+although two-thirds of organizations tend toward analytics on a central edw (according to figure 11), there’s enough demand for dedicated analytic database platforms that these have become permanent fixtures in data warehouse programs worldwide. the movement toward these began in 2003, when the first data warehouse appliances appeared and the it centralization frenzy of the early 2000s subsided. (despite the name, a data warehouse appliance is almost always used for advanced analytics with big data, not an edw.) after that came new vendor-built databases with columnar data stores, which inherently accelerate column-oriented analytic queries. more recently, vendors have brought out analytic platforms based on mapreduce, distributed file systems, and no-sql indexing. today is a great time to be selecting a data warehouse platform or analytic database platform. there are more choices than ever, and most of the choices are built specifically for data warehousing and/or analytics.
+group 3 – weak commitment, good growth.
+organizational commitment to the options of group 3 is weak because they are all relatively new. even so, potential growth is good within committed organizations, so we should expect these options to be in use by more organizations soon.
+hadoop distributed file system (hdfs). at the moment, users’ interest in the hdfs is extremely 
+high (hence, the good potential growth in figure 17), although rarely adopted (hence, the weak commitment). interest is high because big data tends to be diverse in terms of data types, and a data-type-agnostic file system could be a good fit for that diversity. also, many of the complex data types we associate with big data originate in files, examples being web logs and xml documents. transforming these into data structures suited to storage via a traditional database management system (dbms) is a problem when dealing with big data because of time-consuming processes for data modeling, data integration, and bulk data load. plus, data transformation could potentially lose the data details and anomalies that fuel some forms of analytics. some users would prefer to simply copy files into a file system without preparing the data much (if at all), as long as the big data strewn across a million or more files is accessible for analytics.
+mapreduce. this relatively new analytic option is also of great interest today, similar to the interest in 
+hadoop. in fact, the two are closely related, in that mapreduce makes a distributed file system like the hdfs addressable through analytic logic. for example, with mapreduce, a user defines a data operation—such as a query or analysis—and the platform “maps” the operation across all relevant nodes for distributed parallel processing and data collection. the mapping and analytic processing work despite diverse data types strewn across many distributed files. the platform then consolidates there are now more 
+choices for analytic 
+database platforms.
+interest is high in 
+distributed file systems 
+and distributed analytic 
+processing.               tdwi.org  29
+and reduces the responses that come back. distributed file systems aside, mapreduce can also work 
+well in a database management system with a relational store, as it does in the aster data database. due to the distributed processing of mapreduce, analytics against very big data is possible—and with good performance.
+complex event processing (cep). this option arrived very recently, yet it is currently experiencing 
+rapid adoption. for example, a recent tdwi report discovered that 20% of survey respondents have incorporated some form of event processing into their data integration solutions; that is significant given the newness of this practice.
+6 although it doesn’t have to, cep often operates in real time, so 
+its adoption is driven partially by the real-time trend. cep can be used in conjunction with analytics, which is another driver. cep technologies are evolving to handle streaming big data.
+sql. trends in bi are sometimes at odds, almost cancelling each other out. that’s currently the case 
+with sql, as some organizations deepen their use of sql while others do the opposite.on the one hand, many organizations rely heavily on sql as the primary approach to advanced 
+analytics. after all, bi professionals know sql, and almost all tools and databases support it. an experienced bi professional can create complex sql programs (plotted as “extreme sql” on figure 17), and these work well with big data that’s sql-addressable. extreme sql is typically applied to highly detailed source data, still in its original schema (or lightly transformed). the sql is “extreme” because it’s creating multi-dimensional structures and other complex data models on the fly, without remodeling and transforming the data ahead of time.
+on the other hand, a small minority of organizations are embracing so-called no-sql databases. 
+this makes sense when the majority of data types analyzed aren’t relational and converting them to tabular structures (or other sql-addressable structures) isn’t practical. given that the second v in the three vs of big data stands for variety, it’s possible that no-sql databases will gain traction. no-sql databases also tend to appeal to application developers, who don’t have the bi professional’s attachment to sql.
+clouds. tdwi technology surveys about clouds have consistently shown that bi professionals prefer 
+private clouds over public ones, especially for bi, dw, and analytic purposes. this helps explain why the public cloud has the weakest commitment in figure 17. the preference for private clouds is mostly due to paranoia over data security and governance. even so, some organizations experiment with analytic tools and databases on a public cloud, then move them onto a private cloud once they decide analytics is mission critical. in a related issue, software-as-a-service (saas) doesn’t necessarily require a cloud, but most saas-based analytic applications or analytic database platforms are on a tightly secured public cloud.some users want more 
+sql for analytics. others 
+want less.
+as with other it systems, 
+analytic tools and databases are heading into the clouds.tools, techniques, and trends
+6 as explained in the tdwi best practices report, next generation data integration , available on tdwi.org. 30 tdwi  research
+big data  a n a lyt ic s
+group 4 – s trong commitment, flat or declining growth.
+group 4 includes essential options such as data marts for analytics, centralized edws, olap tools, 
+hand-coded sql, and dbmss built for oltp. in fact, these are some of the most common options in use today for bi, data warehousing, and analytics. if these are so popular, why does the survey show them in decline? there are two reasons:
+users are maintaining mature investments while shifting new investments to more modern options. for 
+example, almost all organizations with a bi program have developed solutions for online analytic processing (olap). but the current trend is to implement forms of advanced analytics, which are new to many organizations. olap won’t go away. in fact, olap is today the most common form of analytics, and it will remain so for years. no doubt, users’ spend for olap will grow, albeit modestly compared to other analytic options.
+databases designed for online transaction processing (oltp) are in a similar situation. as we saw in 
+the discussion of group 2, many users have come to the conclusion that their organizations would be better served by an analytic database platform built specifically for data warehousing and analytics. they will maintain their investments in older relational databases (designed for oltp, although used for dw) as they shift new investments to databases purpose-built for data warehousing or analytics.
+users are correcting problems with their designs or best practices. due to recent requirements for 
+compliance and data sharing, data marts are even more problematic than ever. although data marts regularly host analytic data sets, they are typically on older platforms that include an oltp database and an smp hardware architecture. whether to rein in proliferated marts or to get a better analytic database platform, many user organizations are aggressively decommissioning analytic data marts.
+hand-coded sql is a natural option to base analytics on. the catch is that hand-coding tends to be non-productive and anti-collaborative. sql cannot go away, because (as the leading language for data) it’s supported by almost every tool and platform in it, plus the skill sets of most data management professionals. in fact, analytics is driving up the use of hand-coded sql. instead of hand-coding sql, most organizations should consider tools that generate sql based on analytic applications developed in a user-friendly gui. this needs to happen to make developers more productive, as well as to make analytic tools more palatable to business people and mildly technical personnel.some mature tools and 
+errant practices will 
+decline in use and priority.               tdwi.org  31
+vendor products for big data analytics
+since the firms that sponsored this report are all good examples of software and hardware vendors 
+that offer tools, platforms, and services for big data analytics, let’s take a brief look at the product and service portfolio of each. the sponsors form a representative sample of the vendor community, yet their offerings illustrate different approaches to big data analytics.
+7
+cloudera makes a business by distributing open source software based on apache hadoop. it personnel demand a number of features and services that hadoop lacks. to help organizations reliably use hadoop in production, cloudera enterprise is specifically designed to improve the manageability of hadoop deployments. cloudera makes hadoop viable for serious enterprise users by providing technical support, upgrades, administrative tools for hadoop clusters, professional services, training, and certification. hence, cloudera collects and develops additional components to strengthen and extend hadoop, while still retaining hadoop’s open-source affordability, big data scalability, and flexibility across a wide range of data types.
+emc corporation is the world’s leading provider of data storage platforms and other information 
+infrastructure solutions. in 2010, emc acquired greenplum and has since built it up as the emc data computing division, which has become a leading platform for big data analytics. greenplum customers are some of the largest firms in the world, and they regularly deploy greenplum products on grids or clouds to scale up to very big data. emc greenplum database is known for its shared-nothing massively parallel processing (mpp) architecture, high-performance parallel dataflow engine, and gnet software interconnect technology. recently, emc greenplum has released greenplum hd (an enterprise-ready hadoop distribution), emc greenplum data computing appliance product family (purpose-built for big data analytics), and greenplum chorus (software for collaboration over analytics).
+ibm has one of the largest product portfolios of any software vendor, with analytics as a significant 
+focus in support of ibm’s global campaign for business analytics and optimization (bao). within this massive portfolio, three products stand out because of their recent contributions to enabling big data analytics. first, ibm’s acquisition of netezza in 2010 adds to the portfolio the product that invented the data warehouse appliance and defined the modern analytic database platform. second, just announced in 2011, ibm infosphere biginsights is ibm’s hadoop-based offering that combines the power of hadoop with ibm-unique code to address enterprise requirements. enterprise features include built-in text analytics, a spreadsheet-style data discovery and exploration tool, enterprise-grade security, and administrative tools. third, ibm infosphere streams is a platform for real-time analytic processing (rtap), which uniquely provides velocity for big streaming data analytics on structured and unstructured data.
+impetus technologies offers product engineering and technology r&d services for software 
+product development. in the area of big data analytics, impetus offers consulting, advisory, and professional services. impetus’ customers are large corporations that manage big data as part of operating a business, but most clients also leverage big data with analytics. impetus helps such firms evaluate and embrace new technologies and business practices that are related to big data analytics. impetus provides advisory consulting (to assess big data and analytic opportunities), implementation consulting (to design and develop big data analytic infrastructure and applications), and long-term support (to help clients evolve as new practices and technologies for big data analytics evolve). impetus technologies provides end-to-end, vendor- and technology-agnostic advice and engineering to objectively determine what’s best for the client’s business goals and how to achieve the goals with new technologies and practices.cloudera
+emc greenplum
+ibmvendor products
+7 the vendors and products mentioned here are representative, and the list is not intended to be comprehensive.impetus technologies 32 tdwi  research
+big data  a n a lyt ic s
+kognitio offers wx2, an analytic database platform that can be deployed in one of three ways: as a 
+software-only license, as a fully configured data warehouse appliance running on industry-standard hardware, or on-demand via kognitio’s affordable cloud-based data-warehousing-as-a service (daas) solution. since its founding in 2005, kognitio has rolled out many innovations, namely in-memory big data analytics, data warehouse appliance configurations, mpp shared-nothing database architecture, database high availability, software-as-a-service (saas), and clouds as viable platforms for analytic databases. kognitio customers are known for their sql coding prowess applied to discovery analytics with big data. to complement this, kognitio recently released pablo, with which multi-terabyte virtual cubes for online analytic processing (olap) can be created, deployed, and repopulated within seconds.
+paraccel analytic database (padb) is a columnar, massively parallel processing (mpp) analytic 
+database platform with strong features for query optimization and compilation, compression, and network interconnect. users of padb interviewed by tdwi report high performance with complex sql workloads executed against big data, as well as with a variety of other analytic workloads. because padb is schema-neutral, its users employ agile load-and-go analytic methodologies. padb’s secret sauce is the omne optimizer, which can optimize any sql code, no matter how long, complex, or poorly structured it is. using paraccel’s extensibility framework, users can develop routines for parallelized in-database execution. through on demand integration modules, users can integrate padb with other platforms, including teradata and hadoop. padb performs well on commodity hardware, amounting to a favorable cost-to-performance ratio. padb is deployable in all enterprise environments, even in clouds and other virtualized standard operating environments.
+the sand analytic platform is a columnar analytic database platform that achieves linear data 
+scalability through massively parallel processing (mpp), breaking the constraints of shared-nothing architectures with fully distributed processing and dynamic allocation of resources. sand supports thousands of concurrent users with mixed workloads, infinite query optimization (requiring no tuning once data is loaded), in-memory analytics, full text search, and sandboxing for immediate data testing. the sand analytic platform focuses on complex analytics tasks, including customer loyalty marketing, churn analytics, and financial analytics.
+over the years, sap has deepened its commitment to bi/dw and analytics through the internal 
+development of sap bw, sap bex, and sap netweaver, plus the external acquisition of business objects and sybase. in this direction, sap took a giant step forward in early 2011, when it released sap in-memory appliance (also known as sap hana). hana is an enterprise software architecture that enables analytic queries to run against detailed source data—and run fast in real time—without need for transforming the data into data models optimized for analysis. to achieve this, hana implements a variant of mapreduce. that means that the user needn’t define analytic queries months in advance, then wait for it to model data for them. hana gives logical data modeling a new twist, so that the analyst user can run queries as fast as he/she thinks them up, and without being limited by data models. eventually, sap bw and all sap analytic applications will run atop hana, giving them scalability for big data and speed for discovery analytics.kognitio
+paraccel
+sapsand technology               tdwi.org  33
+sas is famous for its predictive analytics capabilities, which include data management, data 
+visualization tools, and prepackaged business solutions. sas high performance computing is specifically designed to support big data initiatives, and it includes in-memory, in-database, and grid computing support. sas on demand provides support for private and public clouds, including the ability to deploy any sas solution on sas-hosted infrastructure. the sas data integration studio provides support for hadoop, allowing integration specialists to design integration jobs using a graphical interface that generates pig code. sas includes canned hadoop transforms, and plans to support in-database capabilities for hadoop. by the end of 2011, sas will release a high-performance analytics solution in the form of teradata and emc greenplum appliances, which will provide another option for supporting big data analytics.
+tableau is known for its strong visualization features, which can support exploratory or discovery 
+analytics, where the point is to explore and discover things the enterprise didn’t already know. analytics aside, tableau is also used as an all-purpose bi platform, applied to either enterprise or departmental needs. the visual approach seen in tableau enables high ease of use so that—with simple drag-and-drop methods—an analyst or other user can interact directly with the visualization and other visual controls to form queries, reports, and analyses. if the user knows the basics of enterprise data, he or she doesn’t need to wait for assistance from it. with a few mouse-clicks, a user can access a database, identify data structures of interest, and bring big data into server memory for reporting or analysis—all in a self-service manner.
+teradata database is famous for supporting large and mostly centralized edws that yield scalability 
+and fast performance, despite the fact that they’re supporting concurrent mixed workloads, such as those for standard reports, performance management, olap, advanced analytics, and real-time or streaming data. furthermore, teradata’s support for third normal form and in-database analytic processing makes it a good platform for managing and analyzing detailed big data. the centralized edw has distinct advantages. yet, some teradata customers need analytic databases outside the main teradata system. in response, teradata introduced a line of data warehouse appliances and acquired aster data. since then, aster data has received a patent on its native sql integration with mapreduce called sql-mapreduce (which hadoop lacks). and teradata continues to improve support for partnering analytic tools and platforms. today, the teradata portfolio is amazingly diverse, including products and services for just about any bi, dw, or analytic configuration.sas
+tableau software
+teradatavendor products 34 tdwi  research
+big data  a n a lyt ic s
+recommendations
+explore big data so you can discover business facts you never knew. this is how you understand what 
+has changed in your business, as well as where the opportunities are for new customer segments or cost reductions.
+put advanced analytics and big data together. the exploratory- and discovery-oriented methods of 
+advanced analytics are appropriate to learning from big data. and these analytics methods benefit from the massive data samples produced from big data. but the main point is that big data is a special enterprise asset that merits leverage, and advanced analytics provides that leverage.
+think of big data as an opportunity, not a problem. seventy percent of your peers do. sure, the 
+management of big data presents technical challenges. but its analytic insights can lead to cost reductions and revenue lift.
+remember the three vs of big data. they are data volume, data type variety, and data feed velocity. 
+scaling up to big data’s volume is a challenge, but there’s more to it. to get the most out of big data, you need tools and platforms that can analyze diverse data types, and you may need tools that can handle the velocity of streaming data in real time.
+know the types of advanced analytics so you can make informed choices. advanced analytics is a 
+collection of related techniques and tool types, including predictive analytics, data mining, statistical analysis, complex sql, data visualization, artificial intelligence, natural language processing, and database methods that support analytics.
+don’t expect olap to go away. olap is by far the most common analytic approach today, and it will 
+remain so. expect to maintain your olap solution as you implement other analytics.
+embrace big data analytics for the benefits. don’t be seduced by the sexy technologies. big data 
+analytics benefits customer relations, all things bi, and many types of analytic applications.
+beware the barriers to big data analytics. these include inadequate staffing or skills, a lack of business 
+support, and problems with database software.
+plan capacity for hundreds of terabytes of big data. and that’s only for analytics, not your entire dw 
+or enterprise. twenty percent of users will manage half a petabyte of big data just for analytics in three years.
+choose carefully where you will manage and operate on analytic data. the decision will impact data 
+warehouse architecture, scalability limits, query speed, and sponsorship.
+control your analytic databases. don’t let them proliferate like gargantuan data marts. analytic data 
+requires governance, privacy, and security, just like any enterprise data.
+question the hegemony of structured data. non-structured data types are daunting for the uninitiated, 
+but they are the final frontier—the data your enterprise hasn’t tapped for analytics.reevaluate your current portfolio of analytic databases and tools. over half of organizations are 
+contemplating platform replacements to get a platform that performs well, handles diverse big data, 
+or satisfies modern requirements for ease-of-use or self-service.leverage big data via 
+advanced analytics.
+know the three vs of big 
+data and the many types 
+of advanced analytics.
+go for the benefits. avoid 
+the barriers.
+design your big data 
+analytics solutions for 
+capacity, architecture, 
+scale, speed, and 
+governance.
+analyze non-structured 
+data, even if it means 
+acquiring a new analytic 
+platform.               tdwi.org  35
+take another look at data visualization. according to survey responses, use of this function will grow 
+faster than any other big data analytics option. perhaps you need it as much as your peers do.
+rely on in-memory databases for speed. use of these has skyrocketed in recent years, because they 
+yield blistering fast query responses and real-time analytics.
+rely on s ql for analytics—but not too much. as the language of data, sql is a natural fit for analytics, 
+even more so than competing analytic methods such as data mining, statistics, artificial intelligence, 
+or natural language processing. but if you hand-code sql, it can be non-productive and non-collaborative. instead, consider an analytic tool that generates good-quality sql.
+seriously consider the newest analytic platforms. these include hadoop, mapreduce, no-sql 
+databases, public and private clouds, saas, and complex event processing, which uniquely satisfy new requirements for highly diverse data types, unrestricted indexing and querying, outsourcing of analytics, and real-time analytics.give priority to 
+visualization, in-memory databases, and s ql.recommendations research c o -sponsor
+www.tableausoftware.comtableau software helps people see and understand data. ranked by gartner in 2011 as the world’s 
+fastest growing business intelligence company, tableau helps
+ 
+anyone quickly and easily analyze, 
+visualize, and share information. more than 6,500 customers across most industries get rapid results with tableau in the office and on the go. tens of thousands of people use tableau to share data in their blogs and websites. 
+tableau was built to analyze large, real-world data. whether connecting directly to a large data 
+store or working with big data in-memory, customers get powerful self-service analytics that help them finally get big value from big data. 
+enables fast, ad hoc analysis of big data 
+tableau has optimized, direct connections for most high-performance databases and cubes, including teradata, vertica, essbase, greenplum, aster data, and more. these connectors let you take advantage of the capabilities of each database and provide the performance needed to do visual analysis of large volumes of data. database-level security also is enforced, so users can only work with the data that they have permissions to access. 
+there are several advantages to working with live data. no new data silos are created and reports 
+and dashboards are always up to date. because of tableau’s optimized connectors, large data tables perform exceptionally well. 
+provides advanced in-memory analytics 
+there are times when customers need to bring data in-memory: to improve query response times, work offline, or take analytical workloads off critical systems. tableau’s fast data engine lets you bring your data in-memory, letting  you work with the data you need and answer your questions without overloading your database. tableau’s data engine takes advantage of all system resources including the hard disk, so it is not subject to the traditional restriction that all data fit in-memory at once. customers also have the choice to connect live or work in-memory , and switch between 
+the two as needed. 
+makes data mash-ups easy  
+the reality at most organizations is that data is not only big, but it’s also in different systems. with tableau, you can connect to multiple data sources, define fields in common, and mash up the data together in the same view. this allows customers to understand their businesses as a whole, not one data silo at a time. 
+gives users powerful, self-service analytics
+tableau enables the people who know the data best to do their own analysis. with drag-and-drop, point-and-click ease to build charts, reports, and dashboards, tableau gets people throughout an organization connected directly to their data. this means less time spent waiting for change requests and gives customers the ability to get value from their data faster . tdwi research
+tdwi research provides research and advice for business 
+intelligence and data warehousing professionals worldwide. 
+tdwi research focuses exclusively on bi/dw issues and 
+teams up with industry thought leaders and practitioners to 
+deliver both broad and deep understanding of the business 
+and technical challenges surrounding the deployment and 
+use of business intelligence and data warehousing solutions. 
+tdwi research offers in-depth research reports, commentary, 
+inquiry services, and topical conferences as well as strategic 
+planning services to user and vendor organizations. 
+1201 monster road sw 
+suite 250 renton, wa 98057-2996t 425.277.9126
+f 425.687.2842
+e info@tdwi.org
+tdwi.org 

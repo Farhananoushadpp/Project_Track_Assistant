@@ -1,0 +1,39 @@
+{% extends 'HOD-Admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewprojectnotificationsrch">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <td colspan="6"><label>Date
+          <input type="date" name="textfield" />
+          <input name="search" type="submit" id="search" value="search" />
+      </label></td>
+    </tr>
+    <tr class="table-dark">
+      <td>course</td>
+      <td>details</td>
+      <td>year</td>
+      <td>date</td>
+      <td>last date </td>
+      <td>&nbsp;</td>
+    </tr>
+            {% for i in  val %}
+
+    <tr>
+            <td>{{i.COURSE.course}}</td>
+
+      <td style="font-style: italic">&nbsp;{{i.details}}</td>
+      <td style="font-style: italic">{{i.year}}&nbsp;</td>
+      <td style="font-style: italic">&nbsp;{{i.date}}</td>
+      <td style="font-style: italic">{{i.lastdate}}&nbsp;</td>
+
+      <td style="font-style: italic"><p><a href="/editprojectnotifications/{{ i.id }}" class="btn btn-outline-success">edit</a></p>
+      <p><a href="deleteprojectnotifications/{{ i.id }}" class="btn btn-outline-danger">delete</a></p></td>
+    </tr>
+            {% endfor %}
+
+    <tr>
+      <td colspan="6"><div align="center"><a href="addprojectnotifications" class="btn btn-outline-info">Add new</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

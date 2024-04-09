@@ -1,0 +1,52 @@
+{% extends 'HOD-Admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewstudentsrch">
+  <table class="table  table-striped">
+    <tr>
+        <td colspan="14" style="font-style: italic"><label>student</label>
+          <input type="text" name="textfield"  />
+        <input name="search" type="submit" id="search" value="search" class="btn btn-outline-success"/></td>
+    </tr>
+    <tr class="table table-dark">
+      <td>reg no. </td>
+      <td>course</td>
+      <td>Name</td>
+      <td>sem</td>
+      <td>dob</td>
+      <td>gender</td>
+      <td>place</td>
+      <td>post</td>
+      <td>pin  </td>
+      <td>phone no. </td>
+      <td>email</td>
+      <td>year</td>
+      <td>photo</td>
+      <td>&nbsp;</td>
+    </tr>
+            {% for i in val %}
+
+    <tr>
+      <td style="font-style: italic">{{ i.RegisterNo }}</td>
+      <td style="font-style: italic">{{ i.COURSE.course }}</td>
+      <td style="font-style: italic">&nbsp;{{ i.fname }} {{ i.lname }}</td>
+      <td style="font-style: italic">&nbsp;{{ i.semester}}</td>
+      <td style="font-style: italic">{{ i.dob }}&nbsp;</td>
+      <td style="font-style: italic">{{ i.gender}}&nbsp;</td>
+      <td style="font-style: italic">{{ i.place }}&nbsp;</td>
+      <td style="font-style: italic">{{ i.post}}&nbsp;</td>
+      <td style="font-style: italic">{{ i.pin }}&nbsp;</td>
+      <td style="font-style: italic">{{ i.Phoneno}}&nbsp;</td>
+      <td style="font-style: italic">&nbsp;{{ i.email}}</td>
+      <td style="font-style: italic">&nbsp;{{ i.year}}</td>
+      <td style="font-style: italic"><img src="{{ i.image.url }}" height="100px" width="100px" alt=""/>&nbsp;</td>
+      <td style="font-style: italic"><p><a href="editdstudent/{{ i.id }}" class="btn btn-outline-success">edit</a></p>
+      <p><a href="deletestudent/{{ i.LOGIN.id }}" class="btn btn-outline-danger">delete </a> </p></td>
+    </tr>
+      {% endfor %}
+
+    <tr>
+      <td colspan="14"><div align="center"><a href="addstudent" class="btn btn-outline-info">Add new</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

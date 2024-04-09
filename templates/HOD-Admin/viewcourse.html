@@ -1,0 +1,31 @@
+{% extends 'HOD-Admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewcoursesrch">
+  <table width="262" border="1" class="table  table-striped">
+    <tr>
+      <td colspan="4"><label>course
+        <input type="text" name="textfield" />
+          <input name="search" type="submit" id="search" value="search" />
+      </label></td>
+    </tr>
+    <tr class=" table-dark ">
+      <td width="43">course</td>
+      <td width="41">details</td>
+      <td width="47">no. of sem </td>
+      <td width="103">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td style="font-style: italic">&nbsp;{{ i.course }}</td>
+      <td style="font-style: italic">&nbsp;{{ i.details }}</td>
+      <td style="font-style: italic">&nbsp;{{ i.noofsem }}</td>
+      <td style="font-style: italic"><p><a href="/editcourse/{{ i.id }}" class="btn btn-outline-success">edit</a></p>
+      <p><a href="deletecourse/{{ i.id }}" class="btn btn-outline-danger">delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4"><div align="center"><a href="addcourse" class="btn btn-outline-info">Add new</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

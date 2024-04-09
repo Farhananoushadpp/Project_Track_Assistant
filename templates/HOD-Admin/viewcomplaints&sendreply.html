@@ -1,0 +1,35 @@
+{% extends 'HOD-Admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewcomplaintsendreplysrch">
+  <table width="277" border="1" class="table  table-striped">
+    <tr>
+      <td colspan="4"><label>complaint
+        <input type="text" name="textfield" />
+          <input name="Search" type="submit" id="Search" value="search" />
+      </label></td>
+    </tr>
+    <tr class=" table-dark ">
+      <td width="47">Student</td>
+      <td width="63">Complaint</td>
+{#        <td width="63">Reply</td>#}
+      <td width="28">Date</td>
+      <td width="111">&nbsp;Reply</td>
+    </tr>
+                  {% for i in val %}
+
+    <tr>
+      <td>{{ i.STUDENT.fname}}{{ iSTUDENT.lname }}&nbsp;</td>
+      <td>{{ i.complaint }}&nbsp;</td>
+{#      <td>&nbsp;{{ i.reply }}</td>#}
+        <td>{{ i.date }}</td>
+        {% if i.reply == 'pending' %}
+      <td><a href="/send_reply/{{ i.id }}" class="btn btn-outline-success">reply</a></td>
+    {% else %}
+    <td>{{ i.reply }}</td>
+    {% endif %}
+    </tr>
+            {% endfor %}
+
+  </table>
+</form>
+{% endblock %}
